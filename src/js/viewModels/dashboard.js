@@ -4,7 +4,7 @@
  * The Universal Permissive License (UPL), Version 1.0
  */
 /*
- * Your dashboard ViewModel code goes here
+ * Dashboard viewmodel code
  */
 define(['knockout','ojs/ojarraydataprovider','text!../data/chartdata.json','ojs/ojchart',],
  function(ko, ArrayDataProvider, data, $) {
