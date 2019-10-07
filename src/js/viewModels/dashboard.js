@@ -6,8 +6,8 @@
 /*
  * Your dashboard ViewModel code goes here
  */
-define(['knockout','ojs/ojarraydataprovider','text!../data/chartdata.json','ojs/ojchart',],
- function(ko, ArrayDataProvider, data, $) {
+define(['knockout','ojs/ojdatagrid', 'ojs/ojcollectiondatagriddatasource'],
+ function(ko, $) {
 
     function DashboardViewModel() {
       var self = this;
@@ -17,7 +17,23 @@ define(['knockout','ojs/ojarraydataprovider','text!../data/chartdata.json','ojs/
       /* toggle button variables */
       this.stackValue = ko.observable('off');
       this.orientationValue = ko.observable('vertical');
-      this.dataProvider = new ArrayDataProvider(JSON.parse(data), {keyAttributes: 'id'});
+      
+      /* Data provider definition */
+      //this.dataProvider = new ArrayDataProvider(JSON.parse(data), {keyAttributes: 'id'});
+      self.url = 'http://localhost:3000/employees';
+
+      self.collection = new oj.Collection(null, {
+          model: new oj.Model.extend({
+              idAttribute: 'id',
+              urlRoot: self.url}),
+          url: self.url
+      });
+      
+      self.dataSource = new oj.CollectionDataGridDataSource(
+         self.collection, {
+            rowHeader: 'id',
+            columns: ['FIRST_NAME', 'LAST_NAME', 'HIRE_DATE', 'SALARY']
+         });      
       
       /**
        * Optional ViewModel method invoked after the View is inserted into the
