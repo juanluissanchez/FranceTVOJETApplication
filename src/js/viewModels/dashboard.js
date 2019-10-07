@@ -6,7 +6,7 @@
 /*
  * Your dashboard ViewModel code goes here
  */
-define(['knockout','ojs/ojdatagrid', 'ojs/ojcollectiondatagriddatasource'],
+define(['knockout', 'jquery', 'ojs/ojdatagrid', 'ojs/ojcollectiondatagriddatasource'],
  function(ko, $) {
 
     function DashboardViewModel() {
