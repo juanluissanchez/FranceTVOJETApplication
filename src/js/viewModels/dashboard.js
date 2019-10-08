@@ -4,7 +4,7 @@
  * The Universal Permissive License (UPL), Version 1.0
  */
 /*
- * Your dashboard ViewModel code goes here
+ * Your dashboard ViewModel
  */
 define(['knockout', 'jquery', 'ojs/ojdatagrid', 'ojs/ojcollectiondatagriddatasource'],
  function(ko, $) {
