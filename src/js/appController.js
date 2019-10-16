@@ -23,10 +23,10 @@ define(['knockout', 'ojs/ojmodule-element-utils', 'ojs/ojknockouttemplateutils',
        // Router setup
        self.router = Router.rootInstance;
        self.router.configure({
-         'dashboard': {label: 'Dashboard', isDefault: true},
+         'dashboard': {label: 'Tableau de bord', isDefault: true},
          'incidents': {label: 'Incidents'},
-         'customers': {label: 'Customers'},
-         'about': {label: 'About'}
+         'customers': {label: 'Clients'},
+         'about': {label: 'À propos de'}
        });
       Router.defaults['urlAdapter'] = new Router.urlParamAdapter();
 
@@ -51,13 +51,13 @@ define(['knockout', 'ojs/ojmodule-element-utils', 'ojs/ojknockouttemplateutils',
 
       // Navigation setup
       var navData = [
-      {name: 'Dashboard', id: 'dashboard',
+      {name: 'Tableau de bord', id: 'dashboard',
        iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-chart-icon-24'},
       {name: 'Incidents', id: 'incidents',
        iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-fire-icon-24'},
-      {name: 'Customers', id: 'customers',
+      {name: 'Clients', id: 'customers',
        iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-people-icon-24'},
-      {name: 'About', id: 'about',
+      {name: 'À propos', id: 'about',
        iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-info-icon-24'}
       ];
       self.navDataProvider = new ArrayDataProvider(navData, {keyAttributes: 'id'});
@@ -79,9 +79,9 @@ define(['knockout', 'ojs/ojmodule-element-utils', 'ojs/ojknockouttemplateutils',
 
       // Header
       // Application Name used in Branding Area
-      self.appName = ko.observable("App Name");
+      self.appName = ko.observable("France TV - OJET Application");
       // User Info used in Global Navigation area
-      self.userLogin = ko.observable("john.hancock@oracle.com");
+      self.userLogin = ko.observable("juan.luis.sanchez.gallardo@oracle.com");
 
       // Footer
       function footerLink(name, id, linkTarget) {
@@ -90,11 +90,11 @@ define(['knockout', 'ojs/ojmodule-element-utils', 'ojs/ojknockouttemplateutils',
         this.linkTarget = linkTarget;
       }
       self.footerLinks = ko.observableArray([
-        new footerLink('About Oracle', 'aboutOracle', 'http://www.oracle.com/us/corporate/index.html#menu-about'),
-        new footerLink('Contact Us', 'contactUs', 'http://www.oracle.com/us/corporate/contact/index.html'),
-        new footerLink('Legal Notices', 'legalNotices', 'http://www.oracle.com/us/legal/index.html'),
-        new footerLink('Terms Of Use', 'termsOfUse', 'http://www.oracle.com/us/legal/terms/index.html'),
-        new footerLink('Your Privacy Rights', 'yourPrivacyRights', 'http://www.oracle.com/us/legal/privacy/index.html')
+        new footerLink("À propos d'Oracle", 'aboutOracle', 'http://www.oracle.com/us/corporate/index.html#menu-about'),
+        new footerLink('Contactez Nous', 'contactUs', 'http://www.oracle.com/us/corporate/contact/index.html'),
+        new footerLink('Notice Legal', 'legalNotices', 'http://www.oracle.com/us/legal/index.html'),
+        new footerLink("Conditions d'Utilisation", 'termsOfUse', 'http://www.oracle.com/us/legal/terms/index.html'),
+        new footerLink('Privacité', 'yourPrivacyRights', 'http://www.oracle.com/us/legal/privacy/index.html')
       ]);
      }
 
