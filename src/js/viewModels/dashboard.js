@@ -5,7 +5,7 @@
  */
 /*
  * Your dashboard ViewModel
- * avec Dario
+ * avec Dario github
  */
 define(['knockout', 'jquery', 'ojs/ojdatagrid', 'ojs/ojcollectiondatagriddatasource'],
  function(ko, $) {
